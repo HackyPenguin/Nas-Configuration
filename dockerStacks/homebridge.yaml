@@ -8,6 +8,6 @@ services:
     environment:
       - HOMEBRIDGE_CONFIG_UI_PORT=8581
     volumes:
-      - homebridge:/Volume1/DockerVolumes/homebridge
+      - /Volume1/DockerVolumes/homebridge:/homebridge
 volumes:
   homebridge:
