@@ -17,7 +17,7 @@ services:
 
     # Volumes store your data between container upgrades
     volumes:
-      - '/Volume1/DockerVolumes/pihole:etc/pihole'
+      - '/Volume1/DockerVolumes/pihole:/etc/pihole'
       - '/Volume1/DockerVolumes/dnsmasq.d:/etc/dnsmasq.d'
     #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
     restart: unless-stopped
