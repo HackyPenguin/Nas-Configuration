@@ -12,6 +12,8 @@ services:
       - "8080:80/tcp"
     environment:
       TZ: 'GMT'
+    env_file: 
+      - stack.env 
     # Volumes store your data between container upgrades
     volumes:
       - './etc-pihole:/Volume1/DockerVolumes/pihole'
