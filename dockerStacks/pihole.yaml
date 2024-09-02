@@ -13,6 +13,7 @@ services:
     environment:
       TZ: 'GMT'
       WEBPASSWORD: $WEBPASSWORD
+      DNSMASQ_LISTENING: all
 
     # Volumes store your data between container upgrades
     volumes:
