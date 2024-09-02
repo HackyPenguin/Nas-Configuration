@@ -1,0 +1,20 @@
+version: "3"
+
+# More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    # For DHCP it is recommended to remove these ports and instead add: network_mode: "host"
+    ports:
+      - "6000:53/tcp"
+      - "6000:53/udp"
+      - "8080:80/tcp"
+    environment:
+      TZ: 'GMT'
+    # Volumes store your data between container upgrades
+    volumes:
+      - './etc-pihole:/Volume1/DockerVolumes/pihole'
+      - './etc-dnsmasq.d:/Volume1/DockerVolumes/dnsmasq.d'
+    #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
+    restart: unless-stopped
