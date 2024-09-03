@@ -10,8 +10,6 @@ services:
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
       - "--entryPoints.web.address=:80"
-    network: 
-     - traefik_proxy
     ports:
       - "8090:80"
       - "8089:8080"
