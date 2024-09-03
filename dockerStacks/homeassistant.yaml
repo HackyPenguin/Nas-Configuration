@@ -11,7 +11,6 @@ services:
       - "traefik.docker.network=traefik_proxy"
     image: lscr.io/linuxserver/homeassistant:latest
     container_name: homeassistant
-    network_mode: host
     environment:
       - PUID=1000
       - PGID=1000
