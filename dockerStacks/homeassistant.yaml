@@ -13,6 +13,8 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Etc/UTC
+    networks:
+      - "traefik_proxy"
     volumes:
       - /config:/Volume1/DockerVolumes/homeassistant
     ports:
@@ -20,6 +22,6 @@ services:
     restart: unless-stopped
 
 networks:
-  homeassistant:
+  traefik_proxy:
     name: traefik_proxy
     external: true
