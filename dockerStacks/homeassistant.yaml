@@ -9,6 +9,7 @@ services:
       - "traefik.backend=homeassistant"
       - "traefik.frontend.rule=Host:home.ourhome.life"
       - "traefik.docker.network=traefik_proxy"
+      - "traefik.http.services.homeassistant.loadbalancer.server.port=8123"
     image: lscr.io/linuxserver/homeassistant:latest
     container_name: homeassistant
     environment:
