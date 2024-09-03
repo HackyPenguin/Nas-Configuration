@@ -20,6 +20,6 @@ services:
     restart: unless-stopped
 
 networks:
-  traefik_proxy:
+  homeassistant:
     name: traefik_proxy
     external: true
