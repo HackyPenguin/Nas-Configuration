@@ -1,6 +1,11 @@
 ---
 services:
   homeassistant:
+    labels:
+      - "traefik.enable=true"
+      - "traefik.backend=homeassistant"
+      - "traefik.frontend.rule=Host:home.ourhome.life"
+      - "traefik.docker.network=traefik_proxy"
     image: lscr.io/linuxserver/homeassistant:latest
     container_name: homeassistant
     network_mode: host
@@ -13,3 +18,8 @@ services:
     ports:
       - 8123:8123 
     restart: unless-stopped
+
+networks:
+  traefik_proxy:
+    name: traefik_proxy
+    external: true
